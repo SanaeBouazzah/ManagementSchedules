@@ -2,27 +2,27 @@
 
 namespace App\Repository;
 
-use App\Entity\EmploiduTemps;
+use App\Entity\Emploidutemps;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @extends ServiceEntityRepository<EmploiduTemps>
+ * @extends ServiceEntityRepository<Emploidutemps>
  *
- * @method EmploiduTemps|null find($id, $lockMode = null, $lockVersion = null)
- * @method EmploiduTemps|null findOneBy(array $criteria, array $orderBy = null)
- * @method EmploiduTemps[]    findAll()
- * @method EmploiduTemps[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Emploidutemps|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Emploidutemps|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Emploidutemps[]    findAll()
+ * @method Emploidutemps[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class EmploiduTempsRepository extends ServiceEntityRepository
+class EmploidutempsRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, EmploiduTemps::class);
+        parent::__construct($registry, Emploidutemps::class);
     }
 
     //    /**
-    //     * @return EmploiduTemps[] Returns an array of EmploiduTemps objects
+    //     * @return Emploidutemps[] Returns an array of Emploidutemps objects
     //     */
     //    public function findByExampleField($value): array
     //    {
@@ -36,7 +36,7 @@ class EmploiduTempsRepository extends ServiceEntityRepository
     //        ;
     //    }
 
-    //    public function findOneBySomeField($value): ?EmploiduTemps
+    //    public function findOneBySomeField($value): ?Emploidutemps
     //    {
     //        return $this->createQueryBuilder('e')
     //            ->andWhere('e.exampleField = :val')

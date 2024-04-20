@@ -2,13 +2,11 @@
 
 namespace App\Entity;
 
-use App\Repository\EmploiduTempsRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
+use App\Repository\EmploidutempsRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: EmploiduTempsRepository::class)]
-class EmploiduTemps
+#[ORM\Entity(repositoryClass: EmploidutempsRepository::class)]
+class Emploidutemps
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -16,24 +14,13 @@ class EmploiduTemps
     private ?int $id = null;
 
     #[ORM\Column]
-    private ?int $Jour = null;
+    private ?int $jour = null;
 
     #[ORM\Column]
-    private ?int $Mois = null;
+    private ?int $mois = null;
 
     #[ORM\Column]
-    private ?int $Annee = null;
-
-    /**
-     * @var Collection<int, seance>
-     */
-    #[ORM\OneToMany(targetEntity: seance::class, mappedBy: 'idemploisdutemps')]
-    private Collection $idseance;
-
-    public function __construct()
-    {
-        $this->idseance = new ArrayCollection();
-    }
+    private ?int $annee = null;
 
     public function getId(): ?int
     {
@@ -42,66 +29,36 @@ class EmploiduTemps
 
     public function getJour(): ?int
     {
-        return $this->Jour;
+        return $this->jour;
     }
 
-    public function setJour(int $Jour): static
+    public function setJour(int $jour): static
     {
-        $this->Jour = $Jour;
+        $this->jour = $jour;
 
         return $this;
     }
 
     public function getMois(): ?int
     {
-        return $this->Mois;
+        return $this->mois;
     }
 
-    public function setMois(int $Mois): static
+    public function setMois(int $mois): static
     {
-        $this->Mois = $Mois;
+        $this->mois = $mois;
 
         return $this;
     }
 
     public function getAnnee(): ?int
     {
-        return $this->Annee;
+        return $this->annee;
     }
 
-    public function setAnnee(int $Annee): static
+    public function setAnnee(int $annee): static
     {
-        $this->Annee = $Annee;
-
-        return $this;
-    }
-
-    /**
-     * @return Collection<int, seance>
-     */
-    public function getIdseance(): Collection
-    {
-        return $this->idseance;
-    }
-
-    public function addIdseance(seance $idseance): static
-    {
-        if (!$this->idseance->contains($idseance)) {
-            $this->idseance->add($idseance);
-            $idseance->setIdemploisdutemps($this);
-        }
-
-        return $this;
-    }
-
-    public function removeIdseance(seance $idseance): static
-    {
-        if ($this->idseance->removeElement($idseance)) {
-            // set the owning side to null (unless already changed)
-            if ($idseance->getIdemploisdutemps() === $this) {
-                $idseance->setIdemploisdutemps(null);
-            }
-        }
+        $this->annee = $annee;
 
         return $this;
     }

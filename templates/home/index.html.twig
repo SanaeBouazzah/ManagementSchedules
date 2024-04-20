@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{# {% extends 'base.html.twig' %}
 
 {% block title %}Hello HomeController!{% endblock %}
 
@@ -13,4 +13,24 @@
 
     This friendly message is coming from:
 </div>
+{% endblock %} #}
+
+
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Emploi Du Temps</h1>
+
+    {% if emploidutemps is empty %}
+        <p>No data found.</p>
+    {% else %}
+        <ul>
+            {% for value in emploidutemps %}
+                <li>{{ value.id }}</li>
+                <li>{{ value.jour }}</li>
+                <li>{{ value.mois }}</li>
+                <li>{{ value.annee }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
 {% endblock %}
