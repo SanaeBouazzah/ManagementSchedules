@@ -22,6 +22,9 @@ class Emploidutemps
     #[ORM\Column]
     private ?int $annee = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $data = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -59,6 +62,18 @@ class Emploidutemps
     public function setAnnee(int $annee): static
     {
         $this->annee = $annee;
+
+        return $this;
+    }
+
+    public function getData(): ?string
+    {
+        return $this->data;
+    }
+
+    public function setData(string $data): static
+    {
+        $this->data = $data;
 
         return $this;
     }
